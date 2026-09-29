@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЖК Фестивальный | Квартиры в Кропоткине</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #d9534f;
+      --primary-hover: #c9302c;
+      --bg: #f9f9f9;
+      --text: #333;
+      --card-bg: #ffffff;
+      --border: #e0e0e0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    h1, h2, h3 { margin: 0; line-height: 1.2; }
+    p { margin: 0 0 12px 0; }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+    .btn:hover { background: var(--primary-hover); }
+
+    /* Блок 1 */
+    .hero {
+      padding: 100px 0 60px;
+      text-align: center;
+      background: #fff;
+    }
+    .badge {
+      display: inline-block;
+      background: #fff;
+      color: var(--primary);
+      padding: 10px 20px;
+      border: 2px solid var(--primary);
+      font-weight: 700;
+      margin-bottom: 24px;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(217,83,79,0.15);
+    }
+    .hero h1 {
+      font-size: 36px;
+      color: #222;
+      margin-bottom: 12px;
+    }
+
+    /* Блок 2 */
+    .hero-bg {
+      position: relative;
+      height: 520px;
+      background-image: url('https://cdn.imgpile.com/f/khJ7W29_wm.webp');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .hero-content {
+      text-align: center;
+      color: white;
+      background: rgba(0,0,0,0.65);
+      padding: 48px;
+      border-radius: 12px;
+      max-width: 640px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .payment-badge {
+      background: rgba(255,255,255,0.95);
+      color: #333;
+      padding: 12px 24px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 24px;
+      border-radius: 8px;
+    }
+    .utp-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0;
+      text-align: left;
+    }
+    .utp-list li {
+      color: white;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--primary);
+      padding-left: 16px;
+      font-size: 16px;
+    }
+
+    /* Блок 3 */
+    .infra {
+      padding: 60px 0;
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .infra-left {
+      flex: 1;
+      min-width: 320px;
+      margin-right: 40px;
+    }
+    .infra-left img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      display: block;
+    }
+    .infra-right {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .infra-col {
+      flex: 1;
+      min-width: 220px;
+    }
+    .infra-col img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      display: block;
+    }
+    .infra-col img:hover {
+      transform: translateY(-4px);
+      filter: brightness(0.9);
+    }
+    .infra-col p {
+      font-weight: 600;
+      color: #444;
+      text-align: center;
+      margin: 0;
+    }
+
+    /* Блок 4 */
+    .layouts {
+      padding: 60px 0;
+      text-align: center;
+    }
+    .layout-grid {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .layout-card {
+      width: 320px;
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+      transition: box-shadow 0.3s ease;
+    }
+    .layout-card:hover {
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+    .layout-img {
+      width: 100%;
+      height: 200px;
+      background: #eee;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      display: block;
+    }
+    .layout-card h3 {
+      font-size: 20px;
+      color: #222;
+      margin-bottom: 12px;
+    }
+
+    /* Блок 5 */
+    .buy-options {
+      padding: 60px 0;
+      background: #fff;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .option-box {
+      border: 1px solid var(--border);
+      padding: 32px;
+      border-radius: 12px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #fff;
+    }
+    .option-title {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    .option-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    .option-list li {
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    /* Блок 6 */
+    .offer-banner {
+      position: relative;
+      height: 420px;
+      background-image: url('https://cdn.imgpile.com/f/GHjJuYC_wm.webp');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .offer-box {
+      background: rgba(255,255,255,0.96);
+      padding: 48px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 640px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .offer-title {
+      color: #222;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .offer-sub {
+      color: #777;
+      margin-bottom: 24px;
+    }
+
+    /* Форма */
+    .form-page {
+      padding: 60px 0;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .form-img-container {
+      flex: 1;
+      min-width: 300px;
+      margin-right: 40px;
+    }
+    .form-img-container img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      display: block;
+    }
+    .form-box {
+      flex: 1;
+      min-width: 300px;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .form-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 28px; }
+      .infra { flex-direction: column; }
+      .infra-left { margin-right: 0; margin-bottom: 32px; }
+      .options-grid { grid-template-columns: 1fr; }
+      .form-page { flex-direction: column; }
+      .form-img-container { margin-right: 0; margin-bottom: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Блок 1 -->
+  <section class="hero">
+    <div class="container">
+      <h1>Квартиры в Кропоткине</h1>
+      <div class="badge">Успейте купить последние квартиры</div>
+    </div>
+  </section>
+
+  <!-- Блок 2 -->
+  <section class="hero-bg">
+    <div class="hero-content">
+      <div class="payment-badge">Платеж от 22 844 руб.</div>
+      <ul class="utp-list">
+        <li>Индивидуальное отопление</li>
+        <li>Кирпичные дома</li>
+        <li>Система «Умный дом»</li>
+        <li>10 минут до соснового парка</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Блок 3 -->
+  <section class="infra container">
+    <div class="infra-left">
+      <img src="https://cdn.imgpile.com/f/dlaAmUH_wm.webp" alt="Карта расположения ЖК Фестивальный">
+      <h3>Рядом всё необходимое</h3>
+    </div>
+    <div class="infra-right">
+      <div class="infra-col">
+        <img src="https://cdn.imgpile.com/f/8r6WU4M_wm.webp" alt="ЖД вокзал Кропоткин">
+        <p>ЖД вокзал</p>
+      </div>
+      <div class="infra-col">
+        <img src="https://cdn.imgpile.com/f/PHVEIVi_wm.jfif" alt="Сосновый парк">
+        <p>Сосновый парк</p>
+      </div>
+      <div class="infra-col">
+        <img src="https://cdn.imgpile.com/f/OdkkwTJ_wm.jpg" alt="Школа №7">
+        <p>Школа</p>
+      </div>
+      <div class="infra-col">
+        <img src="https://cdn.imgpile.com/f/iIrlKiX_wm.webp" alt="Детский сад">
+        <p>Детский сад</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок 4 -->
+  <section class="layouts container">
+    <h2 style="text-align: center; margin-bottom: 32px; color: #222;">Планировки</h2>
+    <div class="layout-grid">
+      <div class="layout-card">
+        <div class="layout-img" style="background-image: url('https://cdn.imgpile.com/f/UwPqxo1_wm.webp'); background-size: cover; background-position: center;"></div>
+        <h3>1‑комнатная</h3>
+      </div>
+      <div class="layout-card">
+        <div class="layout-img" style="background-image: url('https://cdn.imgpile.com/f/y5CSfSk_wm.webp'); background-size: cover; background-position: center;"></div>
+        <h3>2‑комнатная</h3>
+      </div>
+      <div class="layout-card">
+        <div class="layout-img" style="background-image: url('https://cdn.imgpile.com/f/eZu8ZtZ_wm.webp'); background-size: cover; background-position: center;"></div>
+        <h3>3‑комнатная</h3>
+      </div>
+    </div>
+    <br>
+    <a href="#form" class="btn">Выбрать квартиру</a>
+  </section>
+
+  <!-- Блок 5 -->
+  <section class="buy-options container">
+    <h2 style="text-align: center; margin-bottom: 40px; color: #222;">Способы покупки</h2>
+    <div class="options-grid">
+      <div class="option-box">
+        <h3 class="option-title">Ипотека</h3>
+        <ul class="option-list">
+          <li>20% Первоначальный взнос</li>
+          <li>Семейная</li>
+          <li>Стандартная</li>
+          <li>IT‑ипотека</li>
+          <li>Комбо</li>
+          <li>Военная</li>
+        </ul>
+        <a href="#form" class="btn">Выбрать</a>
+      </div>
+      <div class="option-box">
+        <h3 class="option-title">Наличный расчёт</h3>
+        <a href="#form" class="btn">Выбрать</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок 6 -->
+  <section class="offer-banner">
+    <div class="offer-box">
+      <h2 class="offer-title">Подберём квартиру по выгодным условиям — индивидуально под вас</h2>
+      <p class="offer-sub">Оставьте заявку — ответим на вопросы, рассчитаем ипотеку</p>
+      <a href="#form" class="btn">Подобрать квартиру</a>
+    </div>
+  </section>
+
+  <!-- Форма с Netlify -->
+  <section id="form" class="form-page container">
+    <div class="form-img-container">
+      <img src="https://cdn.imgpile.com/f/ViZEq6u_wm.webp" alt="ЖК Фестивальный, вид сбоку">
+    </div>
+    <div class="form-box">
+      <h3 style="margin-top: 0; color: #222;">Подобрать квартиру</h3>
+      <form name="zayavka" method="POST" data-netlify="true" netlify-honeypot="_gotcha">
+        <!-- Скрытое поле от спама -->
+        <p style="display: none;">
+          <label>Не заполняйте: <input name="_gotcha"></label>
+        </p>
+        <!-- Тема письма -->
+        <input type="hidden" name="_subject" value="Новая заявка с сайта ЖК Фестивальный">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___‑__‑__" required>
+        </div>
+        <div class="form-group">
+          <label for="flat">Интересует</label>
+          <select id="flat" name="flat">
+            <option value="1к">1‑комнатная</option>
+            <option value="2к">2‑комнатная</option>
+            <option value="3к">3‑комнатная</option>
+          </select>
+        </div>
+        <button type="submit" class="form-submit">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>
